@@ -7,7 +7,23 @@
     <title>Document</title>
 </head>
     <script>
-        
+        //A function that randomly determines the computer play: Rock, Paper, or Scissors.
+        function getComputerChoice() {
+            i = Math.floor(Math.random()*3) + 1
+            if (i === 1) {
+                return 'Rock'
+            } else if (i === 2) {
+                return 'Paper'
+            } else { 
+                return 'Scissors'
+            }
+        };
+        //A function that plays a round of Rock paper scissors by comparing the choices of both players.
+        function playRound(playerSelection, computerSelection) {
+            playerSelection = playerSelection.toLowerCase();
+            
+            return `You ${outcome}! ${winner} beats ${loser}`
+        };
     </script>
 <body>
     
