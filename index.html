@@ -41,6 +41,35 @@
                 return `Tie. ${playerSelection} can't beat itself, forever locked in a cosmic struggle.`
             }
         };
+
+        //A function that plays five rounds of Rock paper scissors, and keeps score, reporting the winner at the end.
+        function game() {
+            let player = 0;
+            let computer = 0;
+            let tie = 0;
+            let outcome = '';
+            for (let i = 0; i < 5; i++) {
+                playerSelection = prompt(`ROUND ${i+1}\nWhat's your play?`)
+                outcome = playRound(playerSelection, getComputerChoice());
+                console.log(outcome);
+                if (outcome.includes('You win!')) {
+                    player++;
+                } else if (outcome.includes('You lose!')) {
+                    computer++;
+                } else {
+                    tie++;
+                }
+            }
+            if (player > computer) {
+                return `You won ${player} to ${computer}. Congratulations!`
+            } else if (computer > player) {
+                return `The computer won ${computer} to ${player}. Glory to the machine god!`
+            } else if (tie === 5) {
+                return "Five ties! What are the odds? No winner."
+            } else {
+                return `You tied ${tie} times in the game and tied in the round. What are the odds? No winner.`
+            }
+        }
     </script>
 <body>
     
