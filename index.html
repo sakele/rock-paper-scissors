@@ -7,9 +7,17 @@
     <title>Document</title>
 </head>
     <script>
+        //A function to transform any string into a capitalized string.
+        function capitalize(str) {
+            str = str.toLowerCase();
+            let first = str.charAt(0);
+            let rest = str.slice(1);
+            first = first.toUpperCase();
+            return first + rest
+        }
         //A function that randomly determines the computer play: Rock, Paper, or Scissors.
         function getComputerChoice() {
-            i = Math.floor(Math.random()*3) + 1
+            let i = Math.floor(Math.random()*3) + 1
             if (i === 1) {
                 return 'Rock'
             } else if (i === 2) {
@@ -20,8 +28,7 @@
         };
         //A function that plays a round of Rock paper scissors by comparing the choices of both players.
         function playRound(playerSelection, computerSelection) {
-            playerSelection = playerSelection.toLowerCase();
-            
+            playerSelection = capitalize(playerSelection);
             return `You ${outcome}! ${winner} beats ${loser}`
         };
     </script>
